@@ -1,0 +1,29 @@
+Results
+
+
+
+             doublerAppend          doublerInsert
+               
+tinyArray      105.446 μs              49.26 μs
+
+smallArray     107.655 μs              50.332 μs
+
+mediumArray    164.34 μs              307.675 μs
+
+largeArray     .594038 ms             12.798869 ms
+
+extraLargeArray    5.005745 ms        831.808527 ms
+
+
+After looking at these results, tinyArray and smallArray run faster
+on the doublerInsert function. But once you use the mediumArray and increase
+the size of the array, the doublerAppend function is faster. This occurs because
+the doublerAppend function utilizes a push method which only relies on one action,
+while the doublerInsert function relies on unshift which loops over the whole array
+which makes it an O(n) operation. The bigger the array the more values the 
+doublerInsert function has to move over an index in order to perform the unshift method.
+So the doublerAppend function scales better.
+
+
+
+
